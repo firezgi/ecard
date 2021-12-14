@@ -13,7 +13,7 @@ function CustomizeMessage() {
          Write your own custom message below </p>
          </div>
          <div>
-             <label for ></label>
+             <label></label>
          </div>
         </>
     )
