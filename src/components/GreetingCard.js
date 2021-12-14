@@ -1,7 +1,7 @@
 import logo from '../images/ecardpic.jpg';
 import '../App.css';
 
-function GreetingCard({greeting,body,closing ,setCustomize}) {
+function GreetingCard({greeting,body,closing ,setCustomize,preview}) {
 
   return (
     <div className="App">
@@ -16,11 +16,15 @@ function GreetingCard({greeting,body,closing ,setCustomize}) {
         <p>
           {closing}
         </p>
+        {preview?
+        <p>Preview mode</p>:
         <button className="App-link"
           onClick={()=>setCustomize(true)}
         >
           Reshare This Card
         </button>
+      }
+        
       </header>
     </div>
   );
