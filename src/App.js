@@ -27,6 +27,7 @@ function App() {
         />
       ) : (
         <GreetingCard
+          email={email}
           greeting={greeting}
           body={body}
           closing={closing}
