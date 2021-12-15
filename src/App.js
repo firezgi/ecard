@@ -32,6 +32,7 @@ function App() {
           closing={closing}
           setCustomize={setCustomize}
           preview={preview}
+          setPreview={setPreview}
         />
       )}
     </div>

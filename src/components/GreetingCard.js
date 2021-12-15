@@ -1,8 +1,11 @@
 import logo from '../images/ecardpic.jpg';
 import '../App.css';
 
-function GreetingCard({greeting,body,closing ,setCustomize,preview}) {
-
+function GreetingCard({greeting,body,closing ,setCustomize,preview,setPreview}) {
+const continueEditing=()=>{
+  setCustomize(true);
+  setPreview(false)
+}
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +20,12 @@ function GreetingCard({greeting,body,closing ,setCustomize,preview}) {
           {closing}
         </p>
         {preview?
-        <p>Preview mode</p>:
+        <div>
+          <button type="button" onClick={()=>setCustomize(true)}>
+            Continue Editing
+            </button> </div>:
         <button className="App-link"
-          onClick={()=>setCustomize(true)}
+          onClick={continueEditing}
         >
           Reshare This Card
         </button>
