@@ -11,7 +11,7 @@ function App() {
   const [customize, setCustomize] = useState(false);
   const [preview, setPreview] = useState(false);
   return (
-    <div>
+    <>
       {customize ? (
         <CustomizeMessage
           email={email}
@@ -36,7 +36,7 @@ function App() {
           setPreview={setPreview}
         />
       )}
-    </div>
+    </>
   );
 }
 

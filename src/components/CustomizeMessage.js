@@ -22,14 +22,16 @@ function CustomizeMessage({
   return (
     <>
       <div className="instructions">
-        <img src={logo} className="thumb" alt="logo" width />
+        <img src={logo} className="thumb" alt="logo"  />
         <p>
           <strong>How to Reshare:</strong>
           <br />
           Write your own custom message below{" "}
         </p>
       </div>
-      <form onSubmit={onSummit}>
+      <form 
+    //   onSubmit={onSummit}
+      >
         <div>
         <label htmlFor="email">Recipient Email</label>
         <br />
@@ -43,7 +45,7 @@ function CustomizeMessage({
         />
         </div>
         <div>
-        <label htmlFor="email">Greeting</label>
+        <label htmlFor="greeting">Greeting</label>
         <br />
         <input
             name="greeting"
@@ -81,7 +83,7 @@ function CustomizeMessage({
         />
         </div> 
         <div>
-            <button type="submit" onClick={onSummit}>Preview</button>
+            <button type="submit" onClick={onSummit}>Preview Greeting Card</button>
             </div>       
       </form>
     </>

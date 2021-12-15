@@ -14,7 +14,7 @@ const sendEcard = () => {
   mailto += 'Go To Greeting Card';
   mailto += '%0D%0A';
 
-  let url = '';
+  let url = 'https://keshi2021.github.io/ecard';
   url += `?greeting=${encodeURIComponent(greeting)}`;
   url += `&body=${encodeURIComponent(body)}`;
   url += `&closing=${encodeURIComponent(closing)}`;
@@ -39,19 +39,18 @@ const sendEcard = () => {
           {closing}
         </p>
         {preview?
-        <div>
-          <button type="button" onClick={()=>setCustomize(true)}>
+        (<div>
+          <button  onClick={continueEditing}>
             Continue Editing
             </button> 
             <button onClick={sendEcard}>Send</button>
-            </div>:
-        <button className="App-link"
-          onClick={continueEditing}
+        </div>):
+        (<button className="App-link"
+          onClick={()=>setCustomize(true)}
         >
           Reshare This Card
-        </button>
-      }
-        
+        </button>)
+      }        
       </header>
     </div>
   );
