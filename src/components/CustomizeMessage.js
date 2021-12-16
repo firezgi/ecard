@@ -29,6 +29,7 @@ function CustomizeMessage({
           Write your own custom message below{" "}
         </p>
       </div>
+      <div className="formInput">
       <form >
         <div>
         <label htmlFor="email">Recipient Email</label>
@@ -77,9 +78,11 @@ function CustomizeMessage({
         />
         </div> 
         <div>
-            <button type="submit" onClick={onSummit}>Preview Greeting Card</button>
-            </div>       
+            <button className="customizeButton" type="submit" onClick={onSummit}>Preview Greeting Card</button>
+        </div>       
       </form>
+      </div>
+      
     </div>
   );
 }

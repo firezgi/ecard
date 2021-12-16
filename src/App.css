@@ -12,8 +12,6 @@ body{
   pointer-events: none;
 }
 .customize {
-  width: 500px;
-  /* background-color: #282c34; */
   background-image: linear-gradient(to right top, #12070d, #30222d, #4c3b51, #66587b, #7978a8, #798fc5, #74a6e0, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
   max-width: 100%;
   margin: 0 auto;
@@ -89,19 +87,22 @@ button {
 .App-link {
   color: #61dafb;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    /* animation: App-logo-spin infinite 20s linear; */
-  }
+.formInput{
+  width:60%;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 800px) {
+  .instructions{
+    display:flex;
+    flex-direction:row ;
+    align-items: center;
+    gap:10px;
+    width:60%;
+    margin:0 auto;
   }
-  to {
-    transform: rotate(360deg);
+  .customizeButton{
+    width:40%;
+    margin:0 auto;
   }
 }
-
-
