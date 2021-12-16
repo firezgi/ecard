@@ -1,57 +1,73 @@
-import logo from '../images/ecardpic.jpg';
-import '../App.css';
+import logo from "../images/ecardpic.jpg";
+// import '../App.css';
+import "./GreetingCard.css";
 
-function GreetingCard({email,greeting,body,closing ,setCustomize,preview,setPreview}) {
-const continueEditing=()=>{
-  setCustomize(true);
-  setPreview(false)
-}
-const sendEcard = () => {
-  let mailto = `mailto:${email}`;
-  mailto += '?subject=E-Card';
-  mailto += '&body=You have received an e-greeting card.';
-  mailto += '%0D%0A%0D%0A';
-  mailto += 'Go To Greeting Card';
-  mailto += '%0D%0A';
+function GreetingCard({
+  email,
+  greeting,
+  body,
+  closing,
+  setCustomize,
+  preview,
+  setPreview,
+}) {
+  const continueEditing = () => {
+    setCustomize(true);
+    setPreview(false);
+  };
+  const sendEcard = () => {
+    let mailto = `mailto:${email}`;
+    mailto += "?subject=E-Card";
+    mailto += "&body=You have received an e-greeting card.";
+    mailto += "%0D%0A%0D%0A";
+    mailto += "Go To Greeting Card";
+    mailto += "%0D%0A";
 
-  let url = 'https://keshi2021.github.io/ecard';
-  url += `?greeting=${encodeURIComponent(greeting)}`;
-  url += `&body=${encodeURIComponent(body)}`;
-  url += `&closing=${encodeURIComponent(closing)}`;
+    let url = "https://keshi2021.github.io/ecard";
+    url += `?greeting=${encodeURIComponent(greeting)}`;
+    url += `&body=${encodeURIComponent(body)}`;
+    url += `&closing=${encodeURIComponent(closing)}`;
 
-  mailto += encodeURIComponent(url);
+    mailto += encodeURIComponent(url);
 
-  // console.log(mailto);
+    // console.log(mailto);
 
-  window.open(mailto);
-}
+    window.open(mailto);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {greeting}
-        </p>
-        <p>
-          {body}
-        </p>
-        <p>
-          {closing}
-        </p>
-        {preview?
-        (<div>
-          <button  onClick={continueEditing}>
-            Continue Editing
-            </button> 
-            <button onClick={sendEcard}>Send</button>
-        </div>):
-        (<button className="App-link"
-          onClick={()=>setCustomize(true)}
-        >
-          Reshare This Card
-        </button>)
-      }        
-      </header>
+    <div
+      // className="App"
+      className="container"
+    >
+      <div
+        // className="App-header"
+        className="book"
+      >
+        <div className="cover">
+          <p>hover me</p>
+          <img
+            src={logo}
+            // className="App-logo"
+            alt="logo"
+          />
+        </div>
+
+        <div className="details">
+          <p className="script">{greeting}</p>
+          <p className="script">{body}</p>
+          <p className="script">{closing}</p>
+          {preview ? (
+            <div className="buttons">
+              <button onClick={continueEditing}style={{marginBottom:"5px",padding:"5px"}}>Continue Editing</button>
+              <button onClick={sendEcard} style={{padding:"5px"}}>Send</button>
+            </div>
+          ) : (
+            <button className="App-link" onClick={() => setCustomize(true)}>
+              Reshare This Card
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

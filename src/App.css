@@ -11,33 +11,88 @@ body{
   height: 40vmin;
   pointer-events: none;
 }
-.instructions{
-  display:flex;
-  flex-direction:row ;
-  align-items: center;
-  gap:10px;
-
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    /* animation: App-logo-spin infinite 20s linear; */
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.customize {
+  width: 500px;
+  /* background-color: #282c34; */
+  background-image: linear-gradient(to right top, #12070d, #30222d, #4c3b51, #66587b, #7978a8, #798fc5, #74a6e0, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  max-width: 100%;
+  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  
+}
+button {
+  display: block;
+  width: 100%;
+  background-color: rgb(0, 136, 199);
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  color: #FFF;
+  font-weight: bold;
+
+}
+.customize textarea {
+  width: 100%;
+}
+
+.customize label {
+  display: block;
+  padding-top: 10px;
+}
+
+.customize button {
+  display: block;
+  margin-top: 20px;
+}
+.instructions{
+  display:flex;
+  flex-direction:row ;
+  align-items: center;
+  gap:10px;
+  width:80%
+}
+.App-header p{
+  font-family: 'Tangerine', serif;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+
+
+
+.App-header {
+  background-image: linear-gradient(to right top, #12070d, #30222d, #4c3b51, #66587b, #7978a8, #798fc5, #74a6e0, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+.App-header .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%;
+}
+.thumb{
+  width:150px;
+  height:auto;
 }
 
 .App-link {
   color: #61dafb;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    /* animation: App-logo-spin infinite 20s linear; */
+  }
 }
 
 @keyframes App-logo-spin {
@@ -48,7 +103,5 @@ body{
     transform: rotate(360deg);
   }
 }
-.thumb{
-  width:150px;
-  height:auto;
-}
+
+

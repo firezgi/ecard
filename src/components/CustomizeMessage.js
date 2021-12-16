@@ -20,7 +20,7 @@ function CustomizeMessage({
         setCustomize(false)
     }
   return (
-    <>
+    <div className="customize">
       <div className="instructions">
         <img src={logo} className="thumb" alt="logo"  />
         <p>
@@ -29,12 +29,9 @@ function CustomizeMessage({
           Write your own custom message below{" "}
         </p>
       </div>
-      <form 
-    //   onSubmit={onSummit}
-      >
+      <form >
         <div>
         <label htmlFor="email">Recipient Email</label>
-        <br />
         <input
             name="email"
             id="email"
@@ -46,7 +43,6 @@ function CustomizeMessage({
         </div>
         <div>
         <label htmlFor="greeting">Greeting</label>
-        <br />
         <input
             name="greeting"
             id="greeting"
@@ -58,7 +54,6 @@ function CustomizeMessage({
         </div>        
         <div>
         <label htmlFor="body">Body</label>
-        <br />
         <textarea
             name="body"
             id="body"
@@ -72,7 +67,6 @@ function CustomizeMessage({
         </div>        
         <div>
         <label htmlFor="closing">Closing</label>
-        <br />
         <input
             name="closing"
             id="closing"
@@ -86,7 +80,7 @@ function CustomizeMessage({
             <button type="submit" onClick={onSummit}>Preview Greeting Card</button>
             </div>       
       </form>
-    </>
+    </div>
   );
 }
 
