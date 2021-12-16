@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
 import logo from "../images/ecardpic.jpg";
 
@@ -14,16 +14,8 @@ function CustomizeMessage({
   setCustomize,
   setPreview
 }) {
-  const[newEmail,setNewEmail]=useState("");
-  const[newGreeting,setNewGreeting]=useState("");
-  const[newBody,setNewBody]=useState("");
-  const[newClosing,setNewClosing]=useState("");
     const onSummit=(e)=>{
         e.preventDefault();
-        setEmail(newEmail);
-        setGreeting(newGreeting);
-        setBody(newBody);
-        setClosing(newClosing);
         setPreview(true);
         setCustomize(false)
     }
@@ -46,7 +38,7 @@ function CustomizeMessage({
             id="email"
             type="text"
             value={email}
-            onChange={(e)=>setNewEmail(e.target.value)}
+            onChange={(e)=>setEmail(e.target.value)}
             placeholder="Recipient Email"
         />
         </div>
@@ -57,7 +49,7 @@ function CustomizeMessage({
             id="greeting"
             type="text"
             value={greeting}
-            onChange={(e)=>setNewGreeting(e.target.value)}
+            onChange={(e)=>setGreeting(e.target.value)}
             placeholder="Greeting"
         />
         </div>        
@@ -68,7 +60,7 @@ function CustomizeMessage({
             id="body"
             type="text"
             value={body}
-            onChange={(e)=>setNewBody(e.target.value)}
+            onChange={(e)=>setBody(e.target.value)}
             placeholder="Body"
             rows="4"
             maxLength="200"
@@ -81,17 +73,13 @@ function CustomizeMessage({
             id="closing"
             type="text"
             value={closing}
-            onChange={(e)=>setNewClosing(e.target.value)}
+            onChange={(e)=>setClosing(e.target.value)}
             placeholder="Closing"
         />
         </div> 
         <div>
             <button className="customizeButton" type="submit" onClick={onSummit}>Preview Greeting Card</button>
-        </div> 
-        
-        <button className="customizeButton" onClick={() => setCustomize(false)}>
-              Back to original
-            </button>      
+        </div>       
       </form>
       </div>
       

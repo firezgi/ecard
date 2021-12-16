@@ -6,9 +6,9 @@ import CustomizeMessage from "./components/CustomizeMessage";
 function App() {
   const query=new URLSearchParams(window.location.search);
   const [email, setEmail] = useState("");
-  const [importedGreeting, setImportedGreeting] = useState(query.get("greeting"));
-  const [importedBody, setImportedBody] = useState(query.get("body"));
-  const [importedClosing, setImportedClosing] = useState(query.get("closing"));
+  const [importedGreeting, setImportedGreeting] = useState(query.get("greeting")||"Dear Mom,");
+  const [importedBody, setImportedBody] = useState(query.get("body")||"Have a blessed Holiday!");
+  const [importedClosing, setImportedClosing] = useState(query.get("closing")||"Love,your Son Hab");
   const [customize, setCustomize] = useState(false);
   const [preview, setPreview] = useState(false);
   
