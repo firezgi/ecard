@@ -29,25 +29,15 @@ function GreetingCard({
     url += `&closing=${encodeURIComponent(closing)}`;
 
     mailto += encodeURIComponent(url);
-
-    // console.log(mailto);
-
     window.open(mailto);
   };
   return (
-    <div
-      // className="App"
-      className="container"
-    >
-      <div
-        // className="App-header"
-        className="book"
-      >
+    <div className="container">
+      <div className="book">
         <div className="cover">
           <p>hover me</p>
           <img
             src={logo}
-            // className="App-logo"
             alt="logo"
           />
         </div>
